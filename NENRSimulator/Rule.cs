@@ -12,14 +12,14 @@ namespace NENRSimulator
     {
         private IOperator op;
 
-        private List<IFuzzySet> antecedent= new List<IFuzzySet>();
+        private List<IFuzzySet> antecedent = new List<IFuzzySet>();
         private IFuzzySet consequent;
-        private List<int> index= new List<int>();
+        private List<int> index = new List<int>();
 
         public Rule(IOperator op)
         {
             this.op = op;
-            this.antecedent = new List<IFuzzySet>();      
+            this.antecedent = new List<IFuzzySet>();
         }
 
         public void addAntecedent(IFuzzySet antecedent, int i)
@@ -58,11 +58,12 @@ namespace NENRSimulator
             double bestValue = op.Calculate(membership);
 
             MutableFuzzySet tmp = new MutableFuzzySet(consequent.Domain);
-            for(int i=0; i< consequent.Domain.Cardinality; i++)
+            for (int i = 0; i < consequent.Domain.Cardinality; i++)
             {
                 var de = consequent.Domain.ElementForIndex(i);
                 tmp.Set(de, Math.Min(bestValue, consequent.ValueAt(de)));
             }
+
             return tmp;
 
             //foreach (DomainElement de in consequent.Domain)

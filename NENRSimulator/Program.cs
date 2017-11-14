@@ -31,17 +31,17 @@ namespace NENRSimulator
                 V = int.Parse(p[4]);
                 S = int.Parse(p[5]);
 
-                //L = 10;
+                //L = 30;
                 //D = 200;
                 //LK = 300;
                 //DK = 300;
-                //V = 5;
+                //V = 45;
                 //S = 1;
 
                 akcel = akcelSy.Solve(L, D, LK, DK, V, S);
                 kormilo = kormiloSy.Solve(L, D, LK, DK, V, S);
 
-                lines[i] = akcel + " " + kormilo + "\r\n"+L + " " + D + " " + LK + " " + DK + " ";
+                lines[i] = akcel + " " + kormilo + "\r\n"+L + " " + D + " " + LK + " " + DK + " "+ V+"\n\n";
                 i++;
 
                 Console.Write(akcel + " " + kormilo + "\r\n ");

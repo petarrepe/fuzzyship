@@ -1,4 +1,5 @@
-﻿using NENRSimulator.KnowledgeBase;
+﻿using System;
+using NENRSimulator.KnowledgeBase;
 using NENRSimulator.Operator;
 
 namespace NENRSimulator
@@ -14,7 +15,8 @@ namespace NENRSimulator
         public override int Solve(int L, int K, int LK, int DK, int V, int S)
         {
             var tmp = (defuzzifier.Defuzz(knowledge.solveFor(L, K, LK, DK, V, S)))- 90;
-            return (int)tmp ;//-90
+
+            return Double.IsNaN(tmp) ?0:(int)tmp; ;//-90
         }
     }
 }

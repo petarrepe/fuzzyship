@@ -49,19 +49,19 @@ namespace NENRSimulator.KnowledgeBase
 
             slow = new CalculatedFuzzySet(velocityDomain, StandardFuzzySet.LFunction(10, 40)); 
             fast = new CalculatedFuzzySet(velocityDomain, StandardFuzzySet.GammaFunction(25, 50));
-            tooFast = new CalculatedFuzzySet(velocityDomain, StandardFuzzySet.GammaFunction(35, 70));
+            tooFast = new CalculatedFuzzySet(velocityDomain, StandardFuzzySet.GammaFunction(30, 50));
 
             close = new CalculatedFuzzySet(distanceDomain, StandardFuzzySet.LambdaFunction(30, 70, 110));
-            tooClose = new CalculatedFuzzySet(distanceDomain, StandardFuzzySet.LFunction(20, 45));
-            middle = new CalculatedFuzzySet(distanceDomain, StandardFuzzySet.GammaFunction(40, 70));
+            tooClose = new CalculatedFuzzySet(distanceDomain, StandardFuzzySet.LFunction(40, 65));
+            middle = new CalculatedFuzzySet(distanceDomain, StandardFuzzySet.GammaFunction(60, 350));
 
             negativeAcceleration = new CalculatedFuzzySet(accelerationDomain, StandardFuzzySet.LFunction(0, 65));
-            positiveAcceleration = new CalculatedFuzzySet(accelerationDomain, StandardFuzzySet.GammaFunction(55, 120));
+            positiveAcceleration = new CalculatedFuzzySet(accelerationDomain, StandardFuzzySet.LambdaFunction(3, 10, 20));
 
-            hardRight = new CalculatedFuzzySet(rudderDomain, StandardFuzzySet.LFunction(0, 30));
+            hardRight = new CalculatedFuzzySet(rudderDomain, StandardFuzzySet.LFunction(15, 30));
             right = new CalculatedFuzzySet(rudderDomain, StandardFuzzySet.LambdaFunction(10, 40, 70));
             left = new CalculatedFuzzySet(rudderDomain, StandardFuzzySet.LambdaFunction(100, 130, 170));
-            hardLeft = new CalculatedFuzzySet(rudderDomain, StandardFuzzySet.GammaFunction(60, 90));
+            hardLeft = new CalculatedFuzzySet(rudderDomain, StandardFuzzySet.GammaFunction(150, 180));
             zeroDegrees = new CalculatedFuzzySet(rudderDomain, StandardFuzzySet.GammaFunction(179, 180));
         }
 
