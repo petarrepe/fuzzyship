@@ -39,14 +39,6 @@ namespace NENRSimulator
             List<double> membership = new List<double>();
             MutableFuzzySet conclusion = new MutableFuzzySet(consequent.Domain);
 
-            //for (int i = 0; i < antecedent.Count; i++)
-            //{
-            //    conclusion = (MutableFuzzySet)Operations.BinaryOperation(conclusion, antecedent[i], new ZadehOr());
-            //}
-
-
-            //return conclusion;
-
             for (int i = 0; i < antecedent.Count; i++)
             {
                 int element = value[index.ElementAt(i)];
@@ -65,26 +57,6 @@ namespace NENRSimulator
             }
 
             return tmp;
-
-            //foreach (DomainElement de in consequent.Domain)
-            //{
-            //    double num = consequent.ValueAt(de);
-
-            //    if (bestValue < num)
-            //    {
-            //        conclusion.Set(de, bestValue);
-            //    }
-            //    else
-            //    {
-            //        conclusion.Set(de, num);
-            //    }
-
-            //}
-
-            //return conclusion;
-
-
-
         }
 
     }
